@@ -13,7 +13,7 @@
     "dev-react": "webpack -d --watch",
     "aws-connect": "chmod 400 lexifec.pem  && ssh -i \"lexifec.pem\" ubuntu@ec2-18-222-217-73.us-east-2.compute.amazonaws.com",
     "startboth-p": "concurrently \"node ./server/index.js\" \"webpack -p\"",
-    "initAll": "concurrently \"apt-get install -y mongodb-org\" \"node ./server/index.js\" \"webpack -p\" \"node ./newVersion/newSeedingScript.js\""
+    "initAll": "concurrently \"node ./server/index.js\" \"webpack -p\" \"node ./newVersion/newSeedingScript.js\""
   },
   "repository": {
     "type": "git",
@@ -38,8 +38,6 @@
     "moment": "^2.23.0",
     "mongodb": "^3.1.13",
     "mongoose": "^5.4.0",
-    "pg": "^7.8.0",
-    "popper.js": "^1.14.6",
     "react": "^16.7.0",
     "react-dates": "^18.3.1",
     "react-dom": "^16.7.0",

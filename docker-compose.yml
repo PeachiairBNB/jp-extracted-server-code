@@ -8,6 +8,9 @@ services:
       - '80:3008'
     links:
       - mongo
+    
+    stdin_open: true
+    tty: true
   mongo:
     container_name: mongo
     image: mongo
