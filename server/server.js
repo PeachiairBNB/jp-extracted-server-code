@@ -3,21 +3,19 @@ var bodyParser = require('body-parser');
 var db = require('./db/index.js');
 var bookingRouter = require('./resources/bookingRouter.js');
 
-// Create the Express application:
 var app = express();
 
-// Attach middleware:
 app.use(bodyParser.json());
+
+app.get('/loaderio-2acfcb2523777999e1fe9195f44d59c9', (req, res) => {
+  res.send('loaderio-2acfcb2523777999e1fe9195f44d59c9');
+});
 
 app.use('/:id', express.static(__dirname + '/../client/dist'));
 
 app.use('/', bookingRouter);
 
-//connect to client
-
-
-
-app.get('/', function (req, res) {
+app.get('/', (req, res) => {
   res.json({ message: 'Welcome to the BillionaireBNB DB RESTful API!' });
 });
 
